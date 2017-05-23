@@ -1,3 +1,13 @@
-<h1>
-  {{title}}
-</h1>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a routerLink="" class="navbar-brand">
+        <img alt="Brand" src="../favicon.ico">
+      </a>
+    </div>
+    <button routerLink="/login" type="button" class="btn btn-default navbar-btn navbar-right" id="btnSignIn">Login</button>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
