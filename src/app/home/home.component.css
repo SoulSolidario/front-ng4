@@ -1,0 +1,12 @@
+.vertical-center > .container {
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+h2 {
+  font-family: monospace;
+}
+.margin {
+  margin-top: 25px;
+}

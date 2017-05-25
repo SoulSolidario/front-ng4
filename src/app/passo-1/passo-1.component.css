@@ -1,0 +1,18 @@
+.img {
+  cursor:pointer;
+  width: 283px;
+  height: 283px;
+}
+
+.bar {
+  padding-left: 150px;
+  padding-right: 150px;
+  margin-top: 70px;
+}
+
+.title {
+  text-align: center;
+  font-family: monospace;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
