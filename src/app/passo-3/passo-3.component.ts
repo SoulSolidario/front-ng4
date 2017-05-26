@@ -19,7 +19,6 @@ export class Passo3Component implements OnInit {
 
     aux.passo3 = num;
     localStorage.setItem('respQuiz', JSON.stringify(aux));
-    console.log(num);
   }
 
 }
