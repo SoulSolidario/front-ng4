@@ -17,6 +17,8 @@ import { HomeComponent } from './home/home.component';
 import { Passo1Component } from './passo-1/passo-1.component';
 import { Passo2Component } from './passo-2/passo-2.component';
 import { Passo3Component } from './passo-3/passo-3.component';
+import { SignupComponent } from './signup/signup.component';
+import { MembersComponent } from './members/members.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { Passo3Component } from './passo-3/passo-3.component';
   HomeComponent,
   Passo1Component,
   Passo2Component,
-  Passo3Component
+  Passo3Component,
+  SignupComponent,
+  MembersComponent
   ],
   imports: [
   BrowserModule,

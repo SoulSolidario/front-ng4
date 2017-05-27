@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { LoginService } from './login.service';
 
 @Component({
@@ -10,12 +11,11 @@ export class LoginComponent implements OnInit {
 
   constructor(private loginService: LoginService) { }
 
-  ngOnInit() {
+  onSubmitLogin(formLogin) {
+    this.loginService.login(formLogin);
   }
 
-  onSubmit(form){
-    this.loginService.login();
-    this.loginService.state();
+  ngOnInit() {
 
   }
 

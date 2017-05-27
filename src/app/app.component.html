@@ -2,12 +2,15 @@
   <div class="container-fluid">
     <div class="navbar-header">
 
-      <a routerLink="">
+      <!-- <a routerLink=""> -->
         <p class="navbar-left name">
-          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-          _SoulSolidário
+          <i class="fa fa-heart" aria-hidden="true"></i>
+          _SoulSolidário 
+          <i *ngIf="!(authState | async); then logue else logado"></i>
+          <ng-template #logado>Hey, {{ name }} <a (click)="logout()" class="btn btn-primary">Sair</a></ng-template>
+          <ng-template #logue><a href="">Faça login</a></ng-template>
         </p>
-      </a>
+      <!-- </a> -->
     </div>
     <a routerLink="/login" class="navbar-right" id="signIn">Login</a>
   </div>
