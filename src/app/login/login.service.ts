@@ -13,9 +13,13 @@ export class LoginService {
 
   createUser(data) {
     this.afAuth.auth.createUserWithEmailAndPassword(data.email, data.password)
+      .then(
+      (success2) => {
+        console.log(success2);
+        this.router.navigate(['member']);
+      })
       .catch(function (error) {
         console.log(error);
-        alert(error.message);
       });
   }
 
@@ -25,6 +29,16 @@ export class LoginService {
       (success2) => {
         console.log(success2);
         this.router.navigate(['member']);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  logout() {
+    this.afAuth.auth.signOut()
+      .then(() => {
+        console.log('Logout');
       })
       .catch(function (error) {
         console.log(error);

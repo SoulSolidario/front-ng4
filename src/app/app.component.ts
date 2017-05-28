@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { LoginService } from './login/login.service';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,12 @@ import { AngularFireAuth } from 'angularfire2/auth';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  user: Observable<firebase.User>;
   title = 'app works!';
 
-  constructor(public af: AngularFireAuth) {}
+  constructor(public af: AngularFireAuth, private service: LoginService) {
+    this.user = this.af.authState;
+  }
 
   /* canActivate(): Observable<boolean> {
     return this.af.authState
@@ -27,13 +32,7 @@ export class AppComponent {
   } */
 
   logout() {
-    this.af.auth.signOut()
-      .then(() => {
-        console.log('Logout');
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    this.service.logout();
   }
 
 }

@@ -6,13 +6,12 @@
         <p class="navbar-left name">
           <i class="fa fa-heart" aria-hidden="true"></i>
           _SoulSolidário 
-          <i *ngIf="!(authState | async); then logue else logado"></i>
-          <ng-template #logado>Hey, {{ name }} <a (click)="logout()" class="btn btn-primary">Sair</a></ng-template>
-          <ng-template #logue><a href="">Faça login</a></ng-template>
         </p>
       <!-- </a> -->
     </div>
-    <a routerLink="/login" class="navbar-right" id="signIn">Login</a>
+    <span *ngIf="(user | async)?.uid; then logado else logue"></span>
+    <ng-template #logado><a (click)="logout()" class="navbar-right" id="signIn">Sair</a></ng-template>
+    <ng-template #logue><a routerLink="/login" class="navbar-right" id="signIn">Entrar</a></ng-template>
   </div>
 </nav>
 <div class="container">

@@ -3,3 +3,14 @@
 </p>
 
 <h5>Olá amigo {{ name }}</h5>
+
+<h1 *ngIf="(user | async)?.uid;">Hello james -> <strong>{{ name }}</strong></h1>
+
+
+
+<i *ngIf="(user | async)?.uid; then logado else nn"></i>
+
+<ng-template #logado><a (click)="logout()" class="btn btn-primary">Sair</a></ng-template>
+<ng-template #nn><i>Saido</i></ng-template>
+
+<i class="fa fa-heart fa-5x"></i>
