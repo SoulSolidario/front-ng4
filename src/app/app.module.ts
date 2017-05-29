@@ -7,9 +7,11 @@ import { AlertModule } from 'ngx-bootstrap';
 import { routing } from './app.routing';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 
 import { LoginService } from './login/login.service';
+import { AuthGuard } from './auth.guard';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -38,9 +40,10 @@ import { MembersComponent } from './members/members.component';
   routing,
   AlertModule.forRoot(),
   AngularFireAuthModule,
+  AngularFireDatabaseModule,
   AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [LoginService],
+  providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

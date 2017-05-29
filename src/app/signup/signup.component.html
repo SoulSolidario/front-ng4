@@ -1,9 +1,19 @@
 <div class="card card-container" style="background-color:antiquewhite;">
   Signup
   <form #form="ngForm" (ngSubmit)="onSubmit(form);">
-    <div class="form-group" [class.has-error]="!email.valid && email.touched">
+    <div class="form-group">
+      <a class="btn btn-fb btn-block">
+       <i class="fa fa-facebook"></i> Facebook</a>
+     </div>
+     <div class="form-group">
+      <a class="btn btn-tw btn-block">
+       <i class="fa fa-twitter"></i> Twitter</a>
+     </div>
+     <p class="text-center">Ou</p>
+     Email e senha
+     <div class="form-group" [class.has-error]="!email.valid && email.touched">
       <input type="email" id="email" name="email" ngModel class="form-control" placeholder="nome@email.com" required
-        email #email="ngModel">
+      email #email="ngModel">
       <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert">
         Email inválido.
       </div>
@@ -18,18 +28,7 @@
       <button type="submit" class="btn btn-in btn-block" role="button" [disabled]="!form.valid">
        Entrar
      </button>
-    </div>
-    
-    <p class="text-center">Ou</p>
+   </div>
 
-    <div class="form-group">
-      <a class="btn btn-fb btn-block">
-       <i class="fa fa-facebook"></i> Facebook</a>
-    </div>
-    <div class="form-group">
-      <a class="btn btn-tw btn-block">
-         <i class="fa fa-twitter"></i> Twitter</a>
-    </div>
-
-  </form>
+ </form>
 </div>
