@@ -17,8 +17,26 @@ export class LoginComponent implements OnInit {
     this.service.login(formLogin);
   }
 
-  ngOnInit() {
+  googleLogin() {
+    this.service.googleProvider();
+  }
 
+  faceLogin() {
+    this.service.faceProvider();
+  }
+
+  githubLogin() {
+    this.service.githubProvider();
+  }
+
+  twitterLogin() {
+    this.service.twitterProvider();
+  }
+
+  ngOnInit() {
+    if(this.service.getCurrentUser()){
+      this.service.getUid();
+    }
   }
 
 }

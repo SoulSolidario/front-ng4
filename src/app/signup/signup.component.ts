@@ -17,7 +17,26 @@ export class SignupComponent implements OnInit {
     this.service.createUser(form.value);
   }
 
+  googleLogin() {
+    this.service.googleProvider();
+  }
+
+  faceLogin() {
+    this.service.faceProvider();
+  }
+
+  githubLogin() {
+    this.service.githubProvider();
+  }
+
+  twitterLogin() {
+    this.service.twitterProvider();
+  }
+
   ngOnInit() {
+    if(this.service.getCurrentUser()){
+      this.service.getUid();
+    }
   }
 
 }

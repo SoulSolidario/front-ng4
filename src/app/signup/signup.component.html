@@ -1,34 +1,49 @@
-<div class="card card-container" style="background-color:antiquewhite;">
-  Signup
-  <form #form="ngForm" (ngSubmit)="onSubmit(form);">
-    <div class="form-group">
-      <a class="btn btn-fb btn-block">
-       <i class="fa fa-facebook"></i> Facebook</a>
+<div class="card card-container">
+ <p class="name text-center">
+  <i class="fa fa-heart" aria-hidden="true"></i>
+  _SoulSolidário
+</p>
+<br>
+<form #form="ngForm" (ngSubmit)="onSubmit(form);">
+  <div class="row">
+    <div class="col-md-3">
+      <a (click)="faceLogin();" class="btn btn-fb btn-block">
+       <i class="fa fa-facebook" aria-hidden="true"></i></a>
      </div>
-     <div class="form-group">
-      <a class="btn btn-tw btn-block">
-       <i class="fa fa-twitter"></i> Twitter</a>
+     <div class="col-md-3">
+      <a (click)="googleLogin();" class="btn btn-gg btn-block">
+        <i class="fa fa-google-plus" aria-hidden="true"></i></a>
+      </div>
+      <div class="col-md-3">
+        <a (click)="twitterLogin();" class="btn btn-tw btn-block">
+         <i class="fa fa-twitter"></i></a>
+       </div>
+       <div class="col-md-3">
+        <a (click)="githubLogin();" class="btn btn-gt btn-block">
+          <i class="fa fa-github" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <br>
+      <p class="text-center">Email e senha</p>
+      <div class="form-group" [class.has-error]="!email.valid && email.touched">
+        <input type="email" id="email" name="email" ngModel class="form-control" placeholder="nome@email.com" required
+        email #email="ngModel">
+        <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert">
+          Email inválido.
+        </div>
+      </div>
+      <div class="form-group" [class.has-error]="!senha.valid && senha.touched">
+        <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Crie uma senha" required #senha="ngModel">
+        <div *ngIf="!senha.valid && senha.touched" class="alert alert-danger" role="alert">
+          Senha inválida.
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-in btn-block" role="button" [disabled]="!form.valid">
+         Entrar
+       </button>
      </div>
-     <p class="text-center">Ou</p>
-     Email e senha
-     <div class="form-group" [class.has-error]="!email.valid && email.touched">
-      <input type="email" id="email" name="email" ngModel class="form-control" placeholder="nome@email.com" required
-      email #email="ngModel">
-      <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert">
-        Email inválido.
-      </div>
-    </div>
-    <div class="form-group" [class.has-error]="!senha.valid && senha.touched">
-      <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Crie uma senha" required #senha="ngModel">
-      <div *ngIf="!senha.valid && senha.touched" class="alert alert-danger" role="alert">
-        Senha inválida.
-      </div>
-    </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-in btn-block" role="button" [disabled]="!form.valid">
-       Entrar
-     </button>
-   </div>
-
- </form>
-</div>
+     <br>
+     <p class="text-center size">Ao se cadastrar você concorda com os nossos <a [routerLink]="['/signup']"><strong>Termos de Uso e Política de Privacidade</strong></a>.</p>
+   </form>
+ </div>

@@ -1,11 +1,47 @@
 
-<h1 *ngIf="(user | async)?.uid;">Hello james -> <strong>{{ name }} <br>{{ uid }}</strong></h1>
+<img class="media-object thumbnail" src="{{ img }}" alt="...">
 
+<h1 class="text-center" *ngIf="(user | async)?.uid;">{{ name }} <br></h1>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-info">
+      <div class="panel-heading">{{area1}}</div>
+      <div class="panel-body">
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%; margin-bottom: 0px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-info">
+      <div class="panel-heading">{{area2}}</div>
+      <div class="panel-body">
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%; margin-bottom: 0px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-info">
+      <div class="panel-heading">{{area3}}</div>
+      <div class="panel-body">
+        <div class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%; margin-bottom: 0px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <i *ngIf="(user | async)?.uid; then logado else nn"></i>
 
-{{area1}} {{area2}} {{area3}}
+
 <i class="fa fa-heart fa-5x"></i>
 <br>
 <ng-template #logado><a (click)="logout()" class="btn btn-primary">Sair</a></ng-template>

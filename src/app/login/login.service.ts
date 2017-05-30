@@ -36,6 +36,42 @@ export class LoginService {
     });
   }
 
+  googleProvider(){
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((data) => {
+      console.log(data.user);
+      this.router.navigate(['/member/' + data.user.uid]);
+    }).catch((error) => {
+      alert(error.message);
+    });
+  }
+
+  faceProvider(){
+    this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then((data) => {
+      console.log(data.user);
+      this.router.navigate(['/member/' + data.user.uid]);
+    }).catch((error) => {
+      alert(error.message)
+    });
+  }
+
+  githubProvider(){
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GithubAuthProvider()).then((data) => {
+      console.log(data.user);
+      this.router.navigate(['/member/' + data.user.uid]);
+    }).catch((error) => {
+      alert(error.message)
+    });
+  }
+
+  twitterProvider(){
+    this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider()).then((data) => {
+      console.log(data.user);
+      this.router.navigate(['/member/' + data.user.uid]);
+    }).catch((error) => {
+      alert(error.message)
+    });
+  }
+
   logout() {
     this.afAuth.auth.signOut()
     .then(() => {

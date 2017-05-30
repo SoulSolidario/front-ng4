@@ -21,9 +21,22 @@
     background-color: #3b5998;
 }
 
-.btn-in {
-   background-color: #337ab7;
-   color:white;
+.name {
+  color: #337ab7;
+  margin-top: 15px;
+  font-size: medium;
+  font-family: sans-serif;
+}
+
+.btn-gg {
+    color: white;
+    background-color: red;
+
+}
+
+.btn-gt {
+   background-color: black;
+   color: white;
 }
 
 .btn-tw {
